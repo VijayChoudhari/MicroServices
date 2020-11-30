@@ -1,0 +1,50 @@
+{
+  "ReRoutes": [
+    //api
+    {
+      "DownstreamPathTemplate": "/api/googlesearch/{everything}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "55035"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/googlesearch/{everything}",
+      "UpstreamHeaderTransform": {
+        "OcelotGateway": "passthru"
+      },
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/bingsearch/{everything}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "55036"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/bingsearch/{everything}",
+      "UpstreamHeaderTransform": {
+        "OcelotGateway": "passthru"
+      },
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/dashboard/{everything}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "55037"
+        }
+      ],
+      "UpstreamPathTemplate": "/api/dashboard/{everything}",
+      "UpstreamHeaderTransform": {
+        "OcelotGateway": "passthru"
+      },
+      "UpstreamHttpMethod": [ "Get", "Post", "Delete" ]
+    }
+  ]
+}

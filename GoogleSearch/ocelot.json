@@ -1,0 +1,20 @@
+{
+  "ReRoutes": [
+    //api
+    {
+      "DownstreamPathTemplate": "/api/googlesearch/{everything}",
+      "DownstreamPathScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "55035" 
+        }
+      ],
+      "UpstreamPathTemplate": "/api/googlesearch/{everything}",
+      "UpstreamHeaderTransform": {
+        "OcelotGateway":  "passthru"
+      },
+      "UpstreamHttpMethod": [ "Get", "POST", "PUT" ]
+    }
+  ]
+}
